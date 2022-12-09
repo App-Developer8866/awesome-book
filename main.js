@@ -1,5 +1,6 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-unused-vars */
+import { DateTime } from './modules/luxon.js';
 import Book from './modules/Book.js';
 
 const booksList = document.getElementById('booksList');
@@ -12,8 +13,18 @@ const showBooks = document.querySelector('.record');
 const Title = document.querySelector('.title');
 const Author = document.querySelector('.author');
 const btn = document.querySelector('.form button');
+const currentDate = DateTime.local();
+
+const newDate = currentDate.toLocaleString({
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+});
+const newTime = currentDate.toLocaleString(DateTime.TIME_WITH_SECONDS).toLowerCase();
 
 const bookc = new Book();
+
+document.getElementById('current-date').innerHTML = `${newDate}, ${newTime}`;
 
 booksList.addEventListener('click', () => {
   window.location.reload();
