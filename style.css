@@ -83,6 +83,17 @@ form button {
   border-radius: 5px;
 }
 
+.date-and-time {
+  width: auto;
+  padding-top: 30px;
+}
+
+#current-date {
+  float: right;
+  padding-right: 30px;
+  font-size: 18px;
+}
+
 .element button {
   background: #f53030;
   color: #fff;
