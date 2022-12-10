@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
   recordSec.style.display = 'block';
   addForm.style.display = 'none';
   contactSec.style.display = 'none';
-  const books = JSON.parse(localStorage.getItem('data'));
+  const books = JSON.parse(localStorage.getItem('data')) === null ? [] : JSON.parse(localStorage.getItem('data'));
   books.forEach((i) => {
     showBooks.innerHTML += `
       <div class="element">
